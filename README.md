@@ -11,15 +11,25 @@ Accurate prediction of the remaining useful life (RUL) of lithium-ion batteries 
 ## 2.Requirements
 
 numpy==1.21.6
+
 numba==0.55.1
+
 matplotlib==3.3.4
+
 scipy==1.8.0
+
 statsmodels==0.13.5
+
 pytorch-lightning==1.9.5
+
 pytorch-forecasting==0.10.3
+
 sympy==1.12.1
+
 reformer_pytorch==1.4.4
+
 openpyxl==3.1.5
+
 einops==0.8.0
 
 ## 3.Datasets
@@ -27,8 +37,11 @@ einops==0.8.0
 The CALCE dataset is already placed in the datasets folder. The URLs of other datasets are as follows:
 
 CALCE dataset: https://calce.umd.edu/battery-data.
+
 NASA dataset: https://www.nasa.gov/content/prognostics-center-of-excellence-data-set-repository.
+
 TJU dataset: https://github.com/wang-fujin/PINN4SOH/tree/main/data/TJU%20data/Dataset_3_NCM_NCA_battery.
+
 
 ## 4.Usage
 
