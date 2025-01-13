@@ -26,7 +26,7 @@ einops==0.8.0
 
 ## 3.Datasets
 
-The CALCE dataset is already placed in the datasets folder. The URLs of other datasets are as follows:
+The preprocessed CALCE dataset is already placed in the datasets folder. The URLs of other datasets are as follows:
 
 CALCE dataset: https://calce.umd.edu/battery-data.
 
