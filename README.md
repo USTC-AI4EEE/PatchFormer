@@ -77,8 +77,8 @@ LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [2]
 0.392     Total estimated model params size (MB)
 Epoch 81: 100%|██████████| 21/21 [03:05<00:00,  8.82s/it, loss=0.00934, train_loss_step=0.00956, val_loss=0.0101, train_loss_epoch=0.00916]
 Epoch 81: 100%|██████████| 21/21 [03:05<00:00,  8.82s/it, loss=0.00934, train_loss_step=0.00956, val_loss=0.0101, train_loss_epoch=0.00916]
-best_model_path: results_CALCE_RUL_prediction_AutoML_sl_64/CS2_35/PatchFormer_smape_35/SP400/PatchFormerNetModel_2024-11-02 03-48-31/PatchFormerNetModel/checkpoints/epoch=81-step=1312.ckpt
-best_model_path:results_CALCE_RUL_prediction_AutoML_sl_64/CS2_35/PatchFormer_smape_35/SP400/PatchFormerNetModel_2024-11-02 03-48-31/PatchFormerNetModel/checkpoints/epoch=81-step=1312.ckpt <_io.TextIOWrapper name='results_CALCE_RUL_prediction_AutoML_sl_64/CS2_35/PatchFormer_smape_35/SP400/PatchFormerNetModel_2024-11-02 03-48-31/log_Feas_2_2_in_l_64_out_l_1_Pcap.txt' mode='w' encoding='UTF-8'>
+best_model_path: results_CALCE_RUL_prediction_sl_64/CS2_35/PatchFormer/SP300/PatchFormerNetModel_2024-11-02 03-48-31/PatchFormerNetModel/checkpoints/epoch=81-step=1312.ckpt
+best_model_path:results_CALCE_RUL_prediction_sl_64/CS2_35/PatchFormer/SP300/PatchFormerNetModel_2024-11-02 03-48-31/PatchFormerNetModel/checkpoints/epoch=81-step=1312.ckpt <_io.TextIOWrapper name='results_CALCE_RUL_prediction_sl_64/CS2_35/PatchFormer/SP300/PatchFormerNetModel_2024-11-02 03-48-31/log_Feas_2_2_in_l_64_out_l_1_Pcap.txt' mode='w' encoding='UTF-8'>
 ```
 
 
