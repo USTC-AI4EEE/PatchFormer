@@ -10,6 +10,7 @@ Accurate prediction of the remaining useful life (RUL) of lithium-ion batteries 
 
 ## 2.Requirements
 
+The version of python is 3.10.13 .
 ```bash
 numpy==1.21.6
 numba==0.55.1
