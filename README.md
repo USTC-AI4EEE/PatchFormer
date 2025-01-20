@@ -92,7 +92,15 @@ best_model_path:results_CALCE_RUL_prediction_sl_64/CS2_35/PatchFormer/SP300/Patc
 If you find our work useful in your research, please consider citing:
 
 ```latex
-
+@article{liu2025patchformer,
+  title={PatchFormer: A novel patch-based transformer for accurate remaining useful life prediction of lithium-ion batteries},
+  author={Liu, Lei and Huang, Jiahui and Zhao, Hongwei and Li, Tianqi and Li, Bin},
+  journal={Journal of Power Sources},
+  volume={631},
+  pages={236187},
+  year={2025},
+  publisher={Elsevier}
+}
 ```
 
 If you have any problems, contact me via liulei13@ustc.edu.cn.
