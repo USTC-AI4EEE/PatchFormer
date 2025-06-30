@@ -37,7 +37,7 @@ parser.add_argument('--patch_len', type=int, default=2, help='patch length for p
 parser.add_argument('--d_model', type=int, default=16, help='hidden dimensions of model')
 parser.add_argument('--count', type=int, default=10, help='The number of independent experiment.')
 parser.add_argument('--batch_size', type=int, default=16, help='The batch size.')
-parser.add_argument('--data_dir', type=str, default='datasets/NASA/', help='path of the data file')
+parser.add_argument('--data_dir', type=str, default='data/NASA data/', help='path of the data file')
 parser.add_argument('--Battery_list', type=list, default=['B0005', 'B0006', 'B0007', 'B0018'], help='Battery data')
 parser.add_argument('--Rated_Capacity', type=float, default=2.0, help='Rate Capacity')
 parser.add_argument('--test_name', type=str, default='B0005', help='Battery data used for test')
