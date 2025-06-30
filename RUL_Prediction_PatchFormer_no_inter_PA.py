@@ -27,8 +27,7 @@ import matplotlib.colors as mcolors
 from matplotlib.font_manager import FontProperties
 import argparse
 parser = argparse.ArgumentParser()
-parser.add_argument('--model', default='PatchFormer_no_inter_PA',
-                    help='Model name.')
+parser.add_argument('--model', default='PatchFormer_no_inter_PA', help='Model name.')
 parser.add_argument('--seed', type=int, default=1, help='Random seed.')
 parser.add_argument('--root_dir', type=str, default='CALCE_RUL_prediction_sl_64', help='root path of the store file')
 parser.add_argument('--seq_len', type=int, default=64, help='input sequence length')
@@ -75,7 +74,7 @@ def print_log(print_string, log_file, visible=True):
     # 刷新缓存区，将数据写入
     log_file.flush()
     
-from DataPreProcess import BatteryDataProcess
+from CALCEDataPreProcess import BatteryDataProcess
 
 #------------------------------------------------- step 1: 数据准备 ----------------------------------------
 # -------------------------------数据分析和数据预处理【至关重要】---------------------------------------

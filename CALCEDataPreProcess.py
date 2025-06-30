@@ -95,7 +95,7 @@ def BatteryDataRead(Battery_list,dir_path):
         Battery[name] = df_result
     return Battery
 
-def BatteryDataProcess(BatteryData,test_name,start_point):
+def BatteryDataProcess(BatteryData,test_name,start_point,args):
     dict_without_test = {key: value for key, value in BatteryData.items() if key != test_name}
     df_train = pd.concat(dict_without_test.values())
     df_train = df_train.filter(items=['BatteryName', 'Cycle','Capacity'])
@@ -129,24 +129,27 @@ def BatteryDataProcess(BatteryData,test_name,start_point):
     df_test.set_index('idx',inplace=True)
     return df_train,df_test,df_all
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--seq_len', type=int, default=64, help='input sequence length')
-parser.add_argument('--label_len', type=int, default=0, help='start token length')
-parser.add_argument('--pred_len', type=int, default=1, help='prediction sequence length') 
-parser.add_argument('--Battery_list', type=list, default=['CS2_35', 'CS2_36', 'CS2_37', 'CS2_38'], help='Battery data')
-parser.add_argument('--data_dir', type=str, default='datasets/CALCE/', help='path of the data file')
-parser.add_argument('--Rated_Capacity', type=float, default=1.1, help='Rate Capacity')
-parser.add_argument('--test_name', type=str, default='CS2_35', help='Battery data used for test')
-parser.add_argument('--start_point_list', type=int, default=[300,400,500], help='The cycle when prediction gets started.')
-args = parser.parse_args()
+
 
 if __name__ == '__main__':
-    # BatteryData = BatteryDataRead(args.Battery_list,args.data_dir)
-    # BatteryData_array = np.array([BatteryData], dtype=object)
-    # np.save('datasets/CALCE/CALCE_Data.npy', BatteryData_array, allow_pickle=True)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--dataset', type=str, default='CALCE', help='the name of dataset')
+    parser.add_argument('--seq_len', type=int, default=64, help='input sequence length')
+    parser.add_argument('--label_len', type=int, default=0, help='start token length')
+    parser.add_argument('--pred_len', type=int, default=1, help='prediction sequence length') 
+    parser.add_argument('--Battery_list', type=list, default=['CS2_35', 'CS2_36', 'CS2_37', 'CS2_38'], help='Battery data')
+    parser.add_argument('--data_dir', type=str, default='datasets/CALCE/', help='path of the data file')
+    parser.add_argument('--Rated_Capacity', type=float, default=1.1, help='Rate Capacity')
+    parser.add_argument('--test_name', type=str, default='CS2_35', help='Battery data used for test')
+    parser.add_argument('--start_point_list', type=int, default=[300,400,500], help='The cycle when prediction gets started.')
+    args = parser.parse_args()
+
+    BatteryData = BatteryDataRead(args.Battery_list,args.data_dir)
+    BatteryData_array = np.array([BatteryData], dtype=object)
+    np.save('datasets/CALCE/CALCE_Data.npy', BatteryData_array, allow_pickle=True)
     BatteryData = np.load('datasets/CALCE/CALCE_Data.npy', allow_pickle=True)
     BatteryData = BatteryData.item()
-    _,_,df_all = BatteryDataProcess(BatteryData,args.test_name,args.start_point_list[0])
+    _,_,df_all = BatteryDataProcess(BatteryData,args.test_name,args.start_point_list[0],args)
     real_data = df_all['target'].values*args.Rated_Capacity
     if not os.path.exists('results'):
         os.makedirs('results')

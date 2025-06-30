@@ -11,6 +11,8 @@ Accurate prediction of the remaining useful life (RUL) of lithium-ion batteries 
 ## 2.Requirements
 
 The version of python is 3.10.13 .
+The version of torch is 1.13.1 .
+
 ```bash
 numpy==1.21.6
 numba==0.55.1
@@ -35,6 +37,7 @@ NASA dataset: https://www.nasa.gov/content/prognostics-center-of-excellence-data
 
 TJU dataset: https://github.com/wang-fujin/PINN4SOH/tree/main/data/TJU%20data/Dataset_3_NCM_NCA_battery.
 
+The data preprocessing code is provided.
 
 ## 4.Usage
 
