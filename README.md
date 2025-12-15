@@ -42,7 +42,7 @@ NASA dataset: https://www.nasa.gov/content/prognostics-center-of-excellence-data
 
 TJU dataset: https://github.com/wang-fujin/PINN4SOH/tree/main/data/TJU%20data/Dataset_3_NCM_NCA_battery.
 
-The data preprocessing code is provided.
+The data preprocessing code is provided. Note: The main code related to RUL prediction is run on the CALCE dataset.  Modifications are required to run it on the NASA and TJU datasets.
 
 ## 4. Usage
 
