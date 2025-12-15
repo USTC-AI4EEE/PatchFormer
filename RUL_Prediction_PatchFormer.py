@@ -85,7 +85,7 @@ from CALCEDataPreProcess import BatteryDataProcess
 BatteryData = np.load('data/CALCE data/CALCE_Data.npy', allow_pickle=True)
 BatteryData = BatteryData.item()
 
-_,_,df_all = BatteryDataProcess(BatteryData,args.test_name,args.start_point_list[0])
+_,_,df_all = BatteryDataProcess(BatteryData,args.test_name,args.start_point_list[0],args)
 real_data = df_all['target'].values*args.Rated_Capacity
 all_pred_data_list = []
 
@@ -97,7 +97,7 @@ if not os.path.exists(root_dir):
 #     os.makedirs(save_figure_dir)
 
 for start_point in args.start_point_list:
-    df_train,df_test,df_all = BatteryDataProcess(BatteryData,args.test_name,start_point)
+    df_train,df_test,df_all = BatteryDataProcess(BatteryData,args.test_name,start_point,args)
     mask_len =len(df_train)     # 训练集按照80%，20%划分训练集和验证集
     # tf_test =len(df_test)
     time_varying_known_reals=['Capacity']

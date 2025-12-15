@@ -1,5 +1,7 @@
-## A Novel Patch-Based Transformer for Accurate Remaining Useful Life Prediction of Lithium-Ion Batteries
+## [Journal of Power Sources 2025] A Novel Patch-Based Transformer for Accurate Remaining Useful Life Prediction of Lithium-Ion Batteries
+
 > **Authors:**
+
 Lei Liu, Jiahui Huang, Hongwei Zhao, Tianqi Li, Bin Li.
 
 This repo contains the code and data from our paper published in Journal of Power Sources [A Novel Patch-Based Transformer for Accurate Remaining Useful Life Prediction of Lithium-Ion Batteries](Paper: https://www.sciencedirect.com/science/article/pii/S0378775325000230).
@@ -8,26 +10,29 @@ This repo contains the code and data from our paper published in Journal of Powe
 
 Accurate prediction of the remaining useful life (RUL) of lithium-ion batteries is critical for ensuring their safe and reliable operation. Nevertheless, achieving precise RUL prediction presents significant challenges due to the intricate degradation mechanisms inherent in battery systems and the influence of operational noise, particularly the capacity regeneration phenomena. To address these issues, we propose a novel patch-based transformer (PatchFormer). The proposed architecture incorporates a Dual Patch-wise Attention Network (DPAN), which effectively captures global correlations between patches via inter-patch attention while also addressing local dependencies within individual patches through intra-patch attention. This dual attention mechanism facilitates the selection and integration of both global and local features. Additionally, we implement a Feature-wise Attention Network (FAN) that utilizes self-attention on the fused temporal features to elucidate the interrelationships among these features. This model proficiently integrates global associations and local details within the partitioned time series, enabling it to accurately delineate the capacity degradation trends while precisely capturing the capacity regeneration occurrences. Extensive experiments are conducted on three public battery degradation datasets, benchmarking our model against state-of-the-art time series forecasting (TSF) models. The results consistently show that our model achieves superior prediction performance across different prediction starting points.
 
-## 2.Requirements
+## 2. Requirements
 
-The version of python is 3.10.13 .
-The version of torch is 1.13.1 .
-
+Step 1:
 ```bash
-numpy==1.21.6
-numba==0.55.1
-matplotlib==3.3.4
-scipy==1.8.0
-statsmodels==0.13.5
-pytorch-lightning==1.9.5
-pytorch-forecasting==0.10.3
-sympy==1.12.1
-reformer_pytorch==1.4.4
-openpyxl==3.1.5
-einops==0.8.0
+conda create -n my_env python=3.10.13
 ```
 
-## 3.Datasets
+Step 2:
+```bash
+conda activate my_env
+```
+
+Step 3:
+```bash
+pip install torch==1.13.1
+```
+
+Step 4:
+```bash
+pip install -r requirements.txt
+```
+
+## 3. Datasets
 
 The CALCE dataset is already placed in the datasets folder. The URLs of other datasets are as follows:
 
@@ -39,7 +44,7 @@ TJU dataset: https://github.com/wang-fujin/PINN4SOH/tree/main/data/TJU%20data/Da
 
 The data preprocessing code is provided.
 
-## 4.Usage
+## 4. Usage
 
 - an example for train and evaluate a new model：
 
@@ -85,12 +90,13 @@ best_model_path: results_CALCE_RUL_prediction_sl_64/CS2_35/PatchFormer/SP300/Pat
 best_model_path:results_CALCE_RUL_prediction_sl_64/CS2_35/PatchFormer/SP300/PatchFormerNetModel_2024-11-02 03-48-31/PatchFormerNetModel/checkpoints/epoch=81-step=1312.ckpt <_io.TextIOWrapper name='results_CALCE_RUL_prediction_sl_64/CS2_35/PatchFormer/SP300/PatchFormerNetModel_2024-11-02 03-48-31/log_Feas_2_2_in_l_64_out_l_1_Pcap.txt' mode='w' encoding='UTF-8'>
 ```
 
+## 5. Acknowledgments
 
-## 5.Acknowledgments
+We appreciate the following open-sourced repositories for their valuable code base:
 
 
 
-## 6.Citation
+## 6. Citation
 
 If you find our work useful in your research, please consider citing:
 
