@@ -1,7 +1,6 @@
 # A Novel Patch-Based Transformer for Accurate Remaining Useful Life Prediction of Lithium-Ion Batteries
 
 > **Authors:**
-
 Lei Liu, Jiahui Huang, Hongwei Zhao, Tianqi Li, Bin Li.
 
 This repo contains the code and data from our paper published in Journal of Power Sources [A Novel Patch-Based Transformer for Accurate Remaining Useful Life Prediction of Lithium-Ion Batteries](Paper: https://www.sciencedirect.com/science/article/pii/S0378775325000230).
