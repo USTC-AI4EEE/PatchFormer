@@ -1,4 +1,4 @@
-name: dcic
+name: patchformer
 channels:
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
   - defaults
