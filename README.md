@@ -10,25 +10,21 @@ This repo contains the code and data from our paper published in Journal of Powe
 
 Accurate prediction of the remaining useful life (RUL) of lithium-ion batteries is critical for ensuring their safe and reliable operation. Nevertheless, achieving precise RUL prediction presents significant challenges due to the intricate degradation mechanisms inherent in battery systems and the influence of operational noise, particularly the capacity regeneration phenomena. To address these issues, we propose a novel patch-based transformer (PatchFormer). The proposed architecture incorporates a Dual Patch-wise Attention Network (DPAN), which effectively captures global correlations between patches via inter-patch attention while also addressing local dependencies within individual patches through intra-patch attention. This dual attention mechanism facilitates the selection and integration of both global and local features. Additionally, we implement a Feature-wise Attention Network (FAN) that utilizes self-attention on the fused temporal features to elucidate the interrelationships among these features. This model proficiently integrates global associations and local details within the partitioned time series, enabling it to accurately delineate the capacity degradation trends while precisely capturing the capacity regeneration occurrences. Extensive experiments are conducted on three public battery degradation datasets, benchmarking our model against state-of-the-art time series forecasting (TSF) models. The results consistently show that our model achieves superior prediction performance across different prediction starting points.
 
-## 2. Requirements
+## 2. Environment setup
 
-Step 1:
+### first method (recommended)
+
 ```bash
-conda create -n my_env python=3.10.13
+conda env create -f patchformer.yaml
+conda activate patchformer
 ```
 
-Step 2:
-```bash
-conda activate my_env
-```
+### second method
 
-Step 3:
 ```bash
+conda create -n patchformer python=3.10.13
+conda activate patchformer
 pip install torch==1.13.1
-```
-
-Step 4:
-```bash
 pip install -r requirements.txt
 ```
 
