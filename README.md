@@ -1,4 +1,4 @@
-## [Journal of Power Sources 2025] A Novel Patch-Based Transformer for Accurate Remaining Useful Life Prediction of Lithium-Ion Batteries
+# A Novel Patch-Based Transformer for Accurate Remaining Useful Life Prediction of Lithium-Ion Batteries
 
 > **Authors:**
 
@@ -12,14 +12,14 @@ Accurate prediction of the remaining useful life (RUL) of lithium-ion batteries 
 
 ## 2. Environment setup
 
-### first method (recommended)
+- first method (recommended)
 
 ```bash
 conda env create -f patchformer.yaml
 conda activate patchformer
 ```
 
-### second method
+- second method
 
 ```bash
 conda create -n patchformer python=3.10.13
@@ -86,13 +86,7 @@ best_model_path: results_CALCE_RUL_prediction_sl_64/CS2_35/PatchFormer/SP300/Pat
 best_model_path:results_CALCE_RUL_prediction_sl_64/CS2_35/PatchFormer/SP300/PatchFormerNetModel_2024-11-02 03-48-31/PatchFormerNetModel/checkpoints/epoch=81-step=1312.ckpt <_io.TextIOWrapper name='results_CALCE_RUL_prediction_sl_64/CS2_35/PatchFormer/SP300/PatchFormerNetModel_2024-11-02 03-48-31/log_Feas_2_2_in_l_64_out_l_1_Pcap.txt' mode='w' encoding='UTF-8'>
 ```
 
-## 5. Acknowledgments
-
-We appreciate the following open-sourced repositories for their valuable code base:
-
-
-
-## 6. Citation
+## 5. Citation
 
 If you find our work useful in your research, please consider citing:
 
