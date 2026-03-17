@@ -9,22 +9,11 @@ This repo contains the code and data from our paper published in Journal of Powe
 
 Accurate prediction of the remaining useful life (RUL) of lithium-ion batteries is critical for ensuring their safe and reliable operation. Nevertheless, achieving precise RUL prediction presents significant challenges due to the intricate degradation mechanisms inherent in battery systems and the influence of operational noise, particularly the capacity regeneration phenomena. To address these issues, we propose a novel patch-based transformer (PatchFormer). The proposed architecture incorporates a Dual Patch-wise Attention Network (DPAN), which effectively captures global correlations between patches via inter-patch attention while also addressing local dependencies within individual patches through intra-patch attention. This dual attention mechanism facilitates the selection and integration of both global and local features. Additionally, we implement a Feature-wise Attention Network (FAN) that utilizes self-attention on the fused temporal features to elucidate the interrelationships among these features. This model proficiently integrates global associations and local details within the partitioned time series, enabling it to accurately delineate the capacity degradation trends while precisely capturing the capacity regeneration occurrences. Extensive experiments are conducted on three public battery degradation datasets, benchmarking our model against state-of-the-art time series forecasting (TSF) models. The results consistently show that our model achieves superior prediction performance across different prediction starting points.
 
-## 2. Environment setup
-
-- first method (recommended)
+## 2. Environment Setup
 
 ```bash
 conda env create -f patchformer.yaml
 conda activate patchformer
-```
-
-- second method
-
-```bash
-conda create -n patchformer python=3.10.13
-conda activate patchformer
-pip install torch==1.13.1
-pip install -r requirements.txt
 ```
 
 ## 3. Datasets
@@ -39,15 +28,15 @@ TJU dataset: https://github.com/wang-fujin/PINN4SOH/tree/main/data/TJU%20data/Da
 
 The data preprocessing code is provided. Note: The main code related to RUL prediction is run on the CALCE dataset.  Modifications are required to run it on the NASA and TJU datasets.
 
-## 4. Usage
+## 4. Model's Training and Evaluation
 
-- an example for train and evaluate a new model：
+First, run the code for model training and evaluation:
 
 ```bash
 python RUL_Prediction_PatchFormer.py
 ```
 
-- You can get the following output:
+Then, you can get the following output:
 
 ```bash
 ['encoder_cont']: torch.Size([128, 64, 2])
@@ -85,7 +74,51 @@ best_model_path: results_CALCE_RUL_prediction_sl_64/CS2_35/PatchFormer/SP300/Pat
 best_model_path:results_CALCE_RUL_prediction_sl_64/CS2_35/PatchFormer/SP300/PatchFormerNetModel_2024-11-02 03-48-31/PatchFormerNetModel/checkpoints/epoch=81-step=1312.ckpt <_io.TextIOWrapper name='results_CALCE_RUL_prediction_sl_64/CS2_35/PatchFormer/SP300/PatchFormerNetModel_2024-11-02 03-48-31/log_Feas_2_2_in_l_64_out_l_1_Pcap.txt' mode='w' encoding='UTF-8'>
 ```
 
-## 5. Citation
+## 5. Visualization of Evaluation Results
+
+### 5.1. Plotting evaluation graphs
+
+E.g., scatter diagrams, radar charts, bar plots.
+
+The plotting scripts are located in the `plot/` directory. For example, to generate evaluation graphs for the CALCE dataset:
+
+```bash
+python plot/CALCE_I_Graph_by_Evaluation.py
+```
+
+The generated figures (PNG and SVG) will be saved in the `figures/` directory.
+
+### 5.2. Times New Roman Font Setup
+
+The plotting scripts use the 'Times New Roman' font family. There are two ways to set it up:
+
+**Method 1**: Using the bundled font files
+
+This project includes Times Newer Roman font files in the `fonts/` directory:
+
+```bash
+fonts/
+├── Times-Newer-Roman-Regular.otf
+└── Times-Newer-Roman-Bold.otf
+```
+
+The plotting scripts load these fonts directly via `FontProperties`, so no system-level installation is needed:
+
+```python
+from matplotlib.font_manager import FontProperties
+font_regular = FontProperties(fname='fonts/Times-Newer-Roman-Regular.otf', size=20)
+font_bold = FontProperties(fname='fonts/Times-Newer-Roman-Bold.otf', size=20)
+```
+
+Note: When running the plotting scripts, make sure your working directory is the project root (`PatchFormer/`), so that the relative path `fonts/` can be found correctly. Alternatively, you can create a subdirectory `fonts/` and place the font files there to match the path used in some scripts (`fonts/Times-Newer-Roman-Regular.otf`).
+
+**Method 2**: System-level installation (recommended)  
+
+If you want `Times New Roman` to be available globally in matplotlib (e.g., via `rcParams`), you need to install the font at the system level. Reference: [CSDN Blog](https://blog.csdn.net/qq_49323609/article/details/139026798).
+
+After this setup, scripts that use `plt.rcParams['font.family'] = 'Times New Roman'` (such as `CALCE_I_Graph_by_Evaluation.py`) will work correctly.
+
+## 6. Citation
 
 If you find our work useful in your research, please consider citing:
 
